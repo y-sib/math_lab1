@@ -36,7 +36,7 @@ def get_interval(func, x_left, x_right, step):
     return [x - 1, x]
 
 def first_fi(x):
-    return float(-1 / ((x + 14) * (2 - x))**(1 / 2))
+    return np.arccos((x + 6) / 8).item()
 
 def second_fi(x):
     return -(x**2 + 9)**(1 / 3)
@@ -59,8 +59,9 @@ func2_eps = 0.01
 
 plot_all(-10, 10, 40)
 
-interval_points_1 = get_interval(first_func, -10, 10, 0.5)
+interval_points_1 = get_interval(first_func, 0, 5, 0.5)
 interval_points_2 = get_interval(second_func, -10, 10, 0.5)
 
 root_list_1 = get_root(interval_points_1, first_fi, func1_eps, 1)
 root_list_2 = get_root(interval_points_2, second_fi, func2_eps, 2)
+
